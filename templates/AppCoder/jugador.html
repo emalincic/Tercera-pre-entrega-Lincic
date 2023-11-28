@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+        <div>
+            <form action="/app/buscar_jug" method="GET">{{form.as_p}}
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+        {% for jugador in jugadores %}
+            <p>Nombre: {{jugador.nombre}}</p>
+            <p>Apellido: {{jugador.apellido}}</p>
+            <p>Posicion: {{jugador.posicion}}</p>
+            <hr>
+        {% endfor %}
+    {% endblock %}

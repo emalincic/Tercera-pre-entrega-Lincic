@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+        <div>
+            <form action="/app/buscar_eq" method="GET">{{form.as_p}}
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+        {% for equipo in equipos %}
+            <p>Nombre: {{equipo.nombre}}</p>
+            <p>Pais: {{equipo.pais}}</p>
+            <p>Ciudad: {{equipo.ciudad}}</p>
+            <hr>
+        {% endfor %}
+    {% endblock %}

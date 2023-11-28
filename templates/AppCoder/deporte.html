@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+        <div>
+            <form action="/app/buscar_dep" method="GET">{{form.as_p}}
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+        {% for deporte in deportes %}
+            <p>Nombre: {{deporte.nombre}}</p>
+            <p>Descripcion: {{deporte.descripcion}}</p>
+            <p>Deporte: {{deporte.juego}}</p>
+            <hr>
+        {% endfor %}
+    {% endblock %}
